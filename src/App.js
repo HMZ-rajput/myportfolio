@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { useEffect, useState } from "react";
 import {Routes, Route, useLocation} from 'react-router-dom'
 import Particles, { initParticlesEngine } from "@tsparticles/react";
@@ -30,8 +30,7 @@ function App() {
     <div className="App">
       
       {/* paticles js */}
-      if (init) {
-        renderParticlesInHomePage && (
+      if (init) { renderParticlesInHomePage && (
       <Particles id="tsparticles" options={particles} />
     )}
 
@@ -39,7 +38,7 @@ function App() {
       <Navbar/>
 
       {/* main page content */}
-
+      <div className='App__main-page-content'>
       <Routes>
         <Route index path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
@@ -48,6 +47,8 @@ function App() {
         <Route path='/portfolio' element={<Portfolio />} />
         <Route path='/contact' element={<Contact />} />
       </Routes>
+      </div>
+      
 
     </div>
   );
